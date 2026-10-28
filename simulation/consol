@@ -1,0 +1,353 @@
+ncsim> 
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm tb_register_file_top.checks tb_register_file_top.clk tb_register_file_top.errors tb_register_file_top.expected tb_register_file_top.i tb_register_file_top.read_addr_a tb_register_file_top.read_addr_b tb_register_file_top.read_data_a tb_register_file_top.read_data_b tb_register_file_top.reset tb_register_file_top.we tb_register_file_top.write_addr tb_register_file_top.write_data
+Created probe 1
+ncsim> run
+
+==============================================================
+ DAY 24 REGISTER FILE - SELF-CHECKING TOP-LEVEL REGRESSION
+ Spec: 8 x 8 | 1 synchronous write | 2 asynchronous read ports
+ Reset: active-high synchronous | reset priority over write
+==============================================================
+
+[TEST T01] Synchronous reset
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x00
+[TEST T01] Completed
+
+[TEST T02] Write address 2 with A5
+[INFO][TOP] WRITE addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x00
+
+[TEST T03] Write address 5 with 3C
+[INFO][TOP] WRITE addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x00
+
+[TEST T04] Write disabled: data must not change
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x00
+[TEST T04] Completed
+
+[TEST T05] Asynchronous dual read
+[PASS][TOP] read address changed without a rising edge | Port A addr=2 data=0xa5
+[PASS][TOP] read address changed without a rising edge | Port B addr=5 data=0x3c
+[TEST T05] Completed
+
+[TEST T06] Address coverage: 0 through 7
+[INFO][TOP] WRITE addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x11
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[TEST T06] Completed
+
+[TEST T07] Data-pattern coverage
+[INFO][TOP] WRITE addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x12
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=2 data=0xff
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0xff
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x13
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0xff
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=3 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0xff
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x14
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0xff
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[INFO][TOP] WRITE addr=4 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x10
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0xff
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x3c
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0xa5
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x15
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0xff
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x16
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x17
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x10
+[TEST T07] Completed
+
+[TEST T08] Reset priority when we=1
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0x00
+[TEST T08] Completed
+
+[TEST T09] Register 0 and same-address dual read
+[INFO][TOP] WRITE addr=0 data=0xc3
+[PASS][TOP] full-bank scan / retention check | Port A addr=0 data=0xc3
+[PASS][TOP] full-bank scan / retention check | Port B addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=2 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=5 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=4 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=3 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=5 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=2 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=6 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=1 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port A addr=7 data=0x00
+[PASS][TOP] full-bank scan / retention check | Port B addr=0 data=0xc3
+[PASS][TOP] same address on both read ports | Port A addr=0 data=0xc3
+[PASS][TOP] same address on both read ports | Port B addr=0 data=0xc3
+
+==============================================================
+ DAY 24 REGRESSION SUMMARY
+ Checks performed : 292
+ Errors detected  : 0
+ FINAL STATUS      : PASS - ALL CHECKS PASSED
+==============================================================
+Simulation complete via $finish(1) at time 392 NS + 0
+./day24_tb.v:230         $finish;
+ncsim> 
