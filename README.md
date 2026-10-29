@@ -1,32 +1,23 @@
-# Day 24 --- 8×8 Register File Design and Verification
 
-```{=html}
+# Day 24 — 8×8 Register File Design and Verification
+
 <p align="center">
-```
-`<b>`{=html}Digital VLSI • Verilog RTL • Register File Architecture •
-Functional Verification • Cadence Genus`</b>`{=html}
-```{=html}
+  <b>Digital VLSI • Verilog RTL • Register File Architecture • Functional Verification • ASIC Synthesis</b>
 </p>
-```
-```{=html}
+
 <p align="center">
-```
-`<code>`{=html}Specification → RTL → Testbench → Simulation → Synthesis
-→ Technology Mapping → Area → Power → Timing → PPA
-Review`</code>`{=html}
-```{=html}
+  <code>Specification → RTL → Testbench → Simulation → Synthesis → Technology Mapping → Area → Power → Timing → PPA Review</code>
 </p>
-```
-```{=html}
+
 <p align="center">
-```
-`<img alt="Project" src="https://img.shields.io/badge/Project-8%C3%978%20Register%20File-blue">`{=html}
-`<img alt="HDL" src="https://img.shields.io/badge/HDL-Verilog-8A2BE2">`{=html}
-`<img alt="Synthesis" src="https://img.shields.io/badge/Synthesis-Cadence%20Genus-orange">`{=html}
-`<img alt="Verification" src="https://img.shields.io/badge/Verification-292%20Checks%20%7C%200%20Errors-success">`{=html}
-```{=html}
+  <img alt="Project" src="https://img.shields.io/badge/Project-8%C3%978%20Register%20File-blue">
+  <img alt="HDL" src="https://img.shields.io/badge/HDL-Verilog-8A2BE2">
+  <img alt="Synthesis" src="https://img.shields.io/badge/Synthesis-Cadence%20Genus-orange">
+  <img alt="Verification" src="https://img.shields.io/badge/Verification-292%20Checks%20%7C%200%20Errors-success">
 </p>
-```
+
+---
+
 
 ------------------------------------------------------------------------
 
@@ -775,20 +766,19 @@ Verification, FPGA Design, and Digital VLSI roles.
 
 ------------------------------------------------------------------------
 
+
+---
+
 ## 18. Author
 
-**Omkar Kalmesh Hadapad**\
+**Omkar Kalmesh Hadapad**  
 Electronics and Communication Engineering
 
 Digital VLSI • Verilog RTL • Functional Verification • Cadence Genus
 
-------------------------------------------------------------------------
+---
 
-```{=html}
 <p align="center">
-```
-`<b>`{=html}Day 24 --- Register File Design, Verification and Synthesis
-Analysis`</b>`{=html}
-```{=html}
+  <b>Day 24 — Register File Design, Functional Verification and Synthesis Analysis</b>
 </p>
-```
+
